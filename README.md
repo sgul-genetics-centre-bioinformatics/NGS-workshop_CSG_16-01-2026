@@ -1,19 +1,19 @@
 ![alt text](https://ukeducationguide.com/wp-content/uploads/2014/10/stgeorgeslondon.jpg "St George's, University of London") 
-# SGUL Workshop: Next Generation Sequencing data analysis
-Friday, January 31, 2020, 14:00-17:00  
+# CSG Workshop: Next Generation Sequencing data analysis
+Friday, January 16th, 2026  
 [St George's, University of London](https://www.sgul.ac.uk/)  
 Room H5.2
 
 ## Organisers: 
 - [Dr Alan Pittman](https://github.com/alanmichaelpittman100), Lecturer in Bioinformatics, SGUL  
 	[✉ apittman@sgul.ac.uk](mailto:apittman@sgul.ac.uk?subject=SGUL%2Workshop)
-- [Dionysios Grigoriadis](https://github.com/digrigor), Bioinformatician, SGUL  
-	[✉ dgrigori@sgul.ac.uk](mailto:dgrigori@sgul.ac.uk?subject=SGUL%2Workshop)
+- [Dr Sara Dobbins](https://github.com/sdobbins), Bioinformatics Research Fellow, SGUL  
+	[✉ sdobbins@sgul.ac.uk](mailto:sdobbins@sgul.ac.uk?subject=SGUL%2Workshop)
 - [SGUL Bioinformatics Unit](http://bioinformatics.sgul.ac.uk/)
 - [SGUL Genetics Centre Bioinformatics](https://github.com/sgul-genetics-centre-bioinformatics)
 
 ## Next Generation Sequencing data analysis workshop
-This hands-on beginners workshop, led by Dr Alan Pittman and Dionysios Grigoriadis, 
+This hands-on beginners workshop, led by Dr Alan Pittman and Sara Dobbins, 
 will cover the fundamental steps of analysing next-generation sequencing data; 
 from processing, quality control and aligning raw sequence data to calling SNVs 
 (short germline variants (Single Nucleotide Polymorphisms & short Indels) to obtain 
