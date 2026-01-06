@@ -1,44 +1,28 @@
 ![alt text](https://ukeducationguide.com/wp-content/uploads/2014/10/stgeorgeslondon.jpg "St George's, University of London") 
-# SGUL Workshop: Next Generation Sequencing data analysis
-Friday, January 31, 2020, 14:00-17:00  
+# CSG Workshop: Next Generation Sequencing data analysis
+Friday, January 16th, 2026  
 [St George's, University of London](https://www.sgul.ac.uk/)  
-Room H5.2
+
 
 ## Organisers: 
-- [Dr Alan Pittman](https://github.com/alanmichaelpittman100), Lecturer in Bioinformatics, SGUL  
+- [Dr Alan Pittman](https://github.com/alanmichaelpittman100), Senior Lecturer in Bioinformatics, SGUL  
 	[✉ apittman@sgul.ac.uk](mailto:apittman@sgul.ac.uk?subject=SGUL%2Workshop)
-- [Dionysios Grigoriadis](https://github.com/digrigor), Bioinformatician, SGUL  
-	[✉ dgrigori@sgul.ac.uk](mailto:dgrigori@sgul.ac.uk?subject=SGUL%2Workshop)
+- [Dr Sara Dobbins](https://github.com/digrigor), Bioinformatics Research Fellow, SGUL  
+	[✉ sdobbins@sgul.ac.uk](mailto:sdobbins@sgul.ac.uk?subject=SGUL%2Workshop)
 - [SGUL Bioinformatics Unit](http://bioinformatics.sgul.ac.uk/)
 - [SGUL Genetics Centre Bioinformatics](https://github.com/sgul-genetics-centre-bioinformatics)
 
 ## Workshop set-up
-For this workshop we are going to use the command line enviroment of the University's STATS3 server, which is accessible to all staff/students with valid SGUL credentials.
+For this workshop we are going to use the command line enviroment within Rstudio using the University's STATS4 server, which is accessible to all staff/students with valid SGUL credentials.
 
 Instructions:
-1. Open File Explorer, locate the N: drive, find and run MobaXterm_Personal_10.4.exe
-2. Click "Start Local Terminal"
-3. Login by typing:
-	```bash
-	ssh yourusername@stats3.sgul.ac.uk
-	```
-	Type your password when prompted and press Enter (Note that your password will not be printied to the screen as you type).
-
-4.    
-	**IF YOU ARE PHD STUDENT OR STAFF**:    
-	This login defaults to your home (H:) drive where we will be working.  
-	Move on to next step.
-
-	**IF YOU ARE UNDERGRADUATE OR POSTGRADUATE STUDENT**:  
-	This login defaults to your home (H:) drive where we will be working.  
-	Move inside your working directory by typing:
-	```bash
-	cd /homedirs8/workshop/<username>
-	```
-
+1. Open File Explorer, navigate to https://stats4.sgul.ac.uk/rstudio/
+2. Click "New Project"
+3. Select "New Directory", "New Project" and call your directory "NGS_workshop" or something similar. This will create a new R project and directory on your H drive with this name.
+4. Navigate to the Terminal tab of the Console pane (on the left hand side of Rstudio). We will be working using this as a command line interface for running jobs on the stats4 server.
 5. Type:
 	```bash
-	git clone https://github.com/sgul-genetics-centre-bioinformatics/NGS-bioinformatics-workshop_SGUL_31-01-2020.git
+	git clone https://github.com/sgul-genetics-centre-bioinformatics/NGS-bioinformatics-workshop_SGUL_16-01-2026.git
 	```
 
 6. Wait for the directory to download and then move inside the directory:
