@@ -27,7 +27,7 @@ Instructions:
 
 6. Wait for the directory to download and then move inside the directory:
 	```bash
-	cd NGS-bioinformatics-workshop_SGUL_31-01-2020
+	cd NGS-workshop_CSG_16-01-2026
 	```
 
 7. You can view a list of all the contents of the directory you are in, by typing:
@@ -35,7 +35,7 @@ Instructions:
 	ls
 	```
 
-You are now ready to start this workshop! Relax and enjoy :)
+You are now ready to start this workshop! 
 
 ## Learning Objectives
 - Quick overview of next generation sequencing 
