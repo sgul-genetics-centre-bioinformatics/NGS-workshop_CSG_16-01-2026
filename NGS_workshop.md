@@ -58,7 +58,7 @@ You are now ready to start this workshop!
 #### Download the human mitochondrial reference sequence:
 Wget runs the wget downloader which can fetch remote files using different protocols e.g. FTP (file transfer protocol).
 The timestamping option checks if the file already exists and only copies it if there is a more recent one available.
--O specifies where to write the file
+-O specifies where to write the file.
 ```bash
 mkdir reference
 wget --timestamping 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/chrM.fa.gz' -O reference/chrM.fa.gz
