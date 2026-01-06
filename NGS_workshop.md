@@ -78,7 +78,7 @@ head reference/chrM.fa
 For the aligment algorithms of BWA, we first need to construct the FM-index for the reference genome 
 (the index command):
 ```bash
-software/bwa index reference/chrM.fa
+software_update/bwa index reference/chrM.fa
 ```
 ---
 #### Prepare the FASTA file for use as a reference for the [genome analysis toolkit (GATK)](https://gatk.broadinstitute.org/hc/en-us/articles/360036194592-Getting-started-with-GATK4)  
@@ -92,14 +92,14 @@ This file describes byte offsets in the fasta file for each contig, allowing us 
 a particular reference base at contig:pos is in the fasta file:
 
 ```bash
-software/samtools faidx reference/chrM.fa
+software_update/samtools faidx reference/chrM.fa
 ```
 This produces a text file with one record per line for each of the fasta contigs. Each record is of the format: 
 contig, size, location, basesPerLine, bytesPerLine.
 
 Creating the sequence dictionary file. We use CreateSequenceDictionary.jar from Picard tools to create a .dict file from a fasta file:
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar CreateSequenceDictionary -R reference/chrM.fa -O reference/chrM.dict
+java -jar software_update/gatk-package-4.0.4.0-local.jar CreateSequenceDictionary -R reference/chrM.fa -O reference/chrM.dict
 ```
 This produces a SAM-style header file; simply describing the contents of our fasta file.
 
@@ -130,7 +130,7 @@ and remove and remaining unwanted adapter sequencenes
 
 To do that:
 ```bash
-software/fastp -i sample1_r1.fastq -I sample1_r2.fastq -o sample1_out.R1.fq.gz -O sample1_out.R2.fq.gz --html \
+software_update/fastp -i sample1_r1.fastq -I sample1_r2.fastq -o sample1_out.R1.fq.gz -O sample1_out.R2.fq.gz --html \
 sample1_results.html --json sample1_results.json --report_title sample1_results
 ```
 
@@ -144,7 +144,7 @@ If this command doesn't work, you can navigate to the sample1_results.html file 
 An alternative way of visualising the quality of our sequence fastq data is with fastqc. This tool will not 
 perform any trimming or any other data processing. It will simply create a quality report in HTML format for the raw and the filtered reads.
 ```bash
-software/fastqc sample1_r1.fastq sample1_r2.fastq sample1_out.R1.fq.gz sample1_out.R2.fq.gz
+software_update/fastqc sample1_r1.fastq sample1_r2.fastq sample1_out.R1.fq.gz sample1_out.R2.fq.gz
 ```
 
 To view the generated .HTML report with firefox type the command below and wait for a few seconds.
@@ -168,7 +168,7 @@ data to the reference genome
 We will align our cleaned FASTQ files to the reference mitochondrial genome using BWA with the following
 command:
 ```bash
-software/bwa mem reference/chrM.fa sample1_out.R1.fq.gz sample1_out.R2.fq.gz \
+software_update/bwa mem reference/chrM.fa sample1_out.R1.fq.gz sample1_out.R2.fq.gz \
 -R '@RG\tID:sample1\tSM:sample1\tLB:sample1\tPL:ILLUMINA' -o sample1.sam 
 ```
 The software BWA mem has taken our cleaned fastq files, the indexed mitochondrial reference sequence
@@ -179,19 +179,19 @@ as arguments and generated the alignment file in sequence alignment format (.SAM
 BAM format has a lower data footprint than SAM (smaller size on the disk), yet retains all of the same
 information
 ```bash
-software/samtools view -Sb sample1.sam -o sample1.bam
+software_update/samtools view -Sb sample1.sam -o sample1.bam
 ```
 #### Sorting the .BAM file
 We sort the aligment file (.BAM) by genomic coordinates so we will be able to then index it (next step).
 Only coordinates-sorted alignment files can be indexed
 ```bash
-software/samtools sort sample1.bam -o sample1_sorted.bam
+software_update/samtools sort sample1.bam -o sample1_sorted.bam
 ```
 
 #### Indexing the .BAM file
 Index a coordinate-sorted BAM or CRAM file for fast random access.
 ```bash
-software/samtools index sample1_sorted.bam
+software_update/samtools index sample1_sorted.bam
 ```
 This command created a .bai file that is a companion file to the main .bam file. This file acts like an
 external table of contents, and allows programs to jump directly to specific parts of the bam file without
@@ -203,7 +203,7 @@ The deduplication step locates and tags duplicate reads in a BAM or SAM file, wh
 defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g.
 library construction using PCR. Read more [here](https://gatk.broadinstitute.org/hc/en-us/articles/360036350292-MarkDuplicates-Picard-)
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar MarkDuplicates -I sample1_sorted.bam -O sample1_sorted_unique.bam \
+java -jar software_update/gatk-package-4.0.4.0-local.jar MarkDuplicates -I sample1_sorted.bam -O sample1_sorted_unique.bam \
 -M sample1_picard_metrics.txt
 ```
 
@@ -217,14 +217,14 @@ calls in each sequence read. BQSR comprises of two steps:
 read group, reported quality score, machine cycle, and nucleotide context. The file (table) created on this step
 will be used by the next step. Therefore, no changes will be made to our bam file on this step.
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar BaseRecalibrator -I sample1_sorted_unique.bam -R reference/chrM.fa \
---known-sites software/common_all_chrM.vcf.gz -O recal_data_table.txt
+java -jar software_update/gatk-package-4.0.4.0-local.jar BaseRecalibrator -I sample1_sorted_unique.bam -R reference/chrM.fa \
+--known-sites software_update/common_all_chrM.vcf.gz -O recal_data_table.txt
 ```
 2. Apply Base-Recalibration. This is the main and final step of BQSR.  The tool recalibrates the 
 base qualities of the input reads based on the recalibration table produced on the previous step and outputs a 
 new recalibrated BAM file:
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar ApplyBQSR -I sample1_sorted_unique.bam -R reference/chrM.fa \
+java -jar software_update/gatk-package-4.0.4.0-local.jar ApplyBQSR -I sample1_sorted_unique.bam -R reference/chrM.fa \
 --bqsr-recal-file recal_data_table.txt -O sample1_sorted_unique_recalibrated.bam
 ```
 ---
@@ -239,7 +239,7 @@ This tool look through the alignments for regions with signs of variation (activ
 an active region, it discards the existing alignment and completely reassembles the reads
 in that region making the calling more accurate.
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar HaplotypeCaller -I sample1_sorted_unique_recalibrated.bam \
+java -jar software_update/gatk-package-4.0.4.0-local.jar HaplotypeCaller -I sample1_sorted_unique_recalibrated.bam \
 -R reference/chrM.fa -G StandardAnnotation \
 -bamout sample1_sorted_unique_recalibrated.bamout.bam \
 -O sample1.vcf
@@ -256,7 +256,7 @@ Here we hard-filter variants based on certain criteria. In this particular examp
 This tool will TAG and NOT REMOVE the variants that fail the Quality Control (fullfill at least one of
 the above criteria).
 ```bash
-java -jar software/gatk-package-4.0.4.0-local.jar VariantFiltration -V sample1.vcf -R reference/chrM.fa \
+java -jar software_update/gatk-package-4.0.4.0-local.jar VariantFiltration -V sample1.vcf -R reference/chrM.fa \
 --genotype-filter-expression "GQ < 30.0" --genotype-filter-name "LowGQ" \
 --filter-expression "QD < 1.5" --filter-name "LowQD" \
 --filter-expression "DP < 6" --filter-name "LowCoverage" \
@@ -340,7 +340,7 @@ For this part we are going to use the linux version of the [IGV application](htt
 
 1. At the linux terminal type:
 ```bash
-software/igv.sh
+software_update/igv.sh
 ```
 2. Open the IGV software (A window will normally open in your windows environment, please check the task bar).
 3. Go to `Genomes` and then select `Load genomes from file...`
@@ -386,7 +386,7 @@ Hint: Part 6 of the workshop.
 
 ---
 6. Count the reads covering the position of the selected variants in the alignment file (.BAM) using the samtools tool.  
-Hint! You can find samtools in software/samtools).  
+Hint! You can find samtools in software_update/samtools).  
 Hint! Check samtools documentation here: http://www.htslib.org/doc/samtools.html.  
 Hint! Use the samtools view function.  
 
