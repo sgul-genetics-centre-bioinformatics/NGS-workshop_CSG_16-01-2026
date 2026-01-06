@@ -15,6 +15,8 @@ Friday, January 16th, 2026
 ## Workshop set-up
 For this workshop we are going to use the command line enviroment within Rstudio using the University's STATS4 server, which is accessible to all staff/students with valid SGUL credentials.
 
+When you are copying and pasting instructions onto the command line you should try and understand all elements of the instruction before executing!
+
 Instructions:
 1. Open File Explorer, navigate to https://stats4.sgul.ac.uk/rstudio/
 2. Click "New Project"
@@ -54,6 +56,9 @@ You are now ready to start this workshop!
 ---
 ### Part 1 - Preparing our mitochondrial reference sequence fasta files
 #### Download the human mitochondrial reference sequence:
+Wget runs the wget downloader which can fetch remote files using different protocols e.g. FTP (file transfer protocol).
+The timestamping option checks if the file already exists and only copies it if there is a more recent one available.
+-O specifies where to write the file
 ```bash
 mkdir reference
 wget --timestamping 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/chrM.fa.gz' -O reference/chrM.fa.gz
