@@ -22,7 +22,7 @@ Instructions:
 4. Navigate to the Terminal tab of the Console pane (on the left hand side of Rstudio). We will be working using this as a command line interface for running jobs on the stats4 server.
 5. Type:
 	```bash
-	git clone https://github.com/sgul-genetics-centre-bioinformatics/NGS-bioinformatics-workshop_SGUL_16-01-2026.git
+	git clone https://github.com/sgul-genetics-centre-bioinformatics/NGS-workshop_CSG_16-01-2026.git
 	```
 
 6. Wait for the directory to download and then move inside the directory:
