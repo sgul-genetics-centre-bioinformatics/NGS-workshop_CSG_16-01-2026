@@ -332,7 +332,7 @@ VEP also has a [command line stand alone version](http://www.ensembl.org/info/do
 
 This is the part of the pipeline that we will visualise the alignments generated in **Part 3** and the filtered variant calls generated in **Part 4**.
 
-For this part we are going to use the linux version of the [IGV application](https://igv.org/)
+For this part we are going to use the web version of the [IGV application]https://igv.org/app/)
 
 1. At the linux terminal type:
 ```bash
