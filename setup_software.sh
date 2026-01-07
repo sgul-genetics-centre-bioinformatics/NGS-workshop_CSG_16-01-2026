@@ -1,7 +1,7 @@
 mkdir software_update
 cd software_update
 ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/bwa/bwa bwa
-ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/samtools-1.8/samtools samtools
+ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/samtools-1.23/samtools samtools
 ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/fastp/0.20/fastp fastp
 ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/Genome_reference_files/common_all_chrM.vcf.gz common_all_chrM.vcf.gz
 ln -s /homes/athosnew/Genetics_Centre_Bioinformatics/NGS_workshop_bioinformatics_unit_31_01_2020_software/Genome_reference_files/common_all_chrM.vcf.gz.tbi common_all_chrM.vcf.gz.tbi
