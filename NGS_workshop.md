@@ -334,7 +334,7 @@ This is the part of the pipeline that we will visualise the alignments generated
 
 For this part we are going to use the web version of the [IGV application]https://igv.org/app/
 
-1. Open a web browser with [online version of IGV](https://igv.org/app/)
+1. Open a web browser and navigate to [online version of IGV](https://igv.org/app/)
 
 2. Open the IGV software (A window will normally open in your windows environment, please check the task bar).
 3. Go to `Genomes` and then select `Load genomes from file...`
