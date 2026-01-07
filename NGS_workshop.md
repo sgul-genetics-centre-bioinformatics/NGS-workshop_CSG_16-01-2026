@@ -80,7 +80,7 @@ head reference/chrM.fa
 ```
 ---
 #### Prepare the FASTA file for use as a referenence for BWA  
-For the aligment algorithms of BWA, we first need to construct the FM-index for the reference genome 
+For the alignment algorithms of BWA, we first need to construct the FM-index for the reference genome 
 (the index command):
 ```bash
 software_update/bwa index reference/chrM.fa
