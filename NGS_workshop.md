@@ -139,10 +139,8 @@ software_update/fastp -i sample1_r1.fastq -I sample1_r2.fastq -o sample1_out.R1.
 sample1_results.html --json sample1_results.json --report_title sample1_results
 ```
 
-To view the generated .HTML report with firefox type the command below and wait for a few seconds.
-```bash
-firefox sample1_results.html
-```
+To view the generated .HTML report navigate to the HTML file in File Explorer and then open with an internet browser
+
 
 If this command doesn't work, you can navigate to the sample1_results.html file through your Windows environment and open the file with a browser (Google Chrome, Mozilla Firefox, etc...)
 #### Alternative way of visualising the quality control of the reads with [FASTQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
