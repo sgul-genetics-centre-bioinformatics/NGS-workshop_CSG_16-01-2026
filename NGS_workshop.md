@@ -36,6 +36,11 @@ Instructions:
 	```bash
 	ls
 	```
+8. We will now create soft links to all the software packages required for this workshop using the setup_software.sh bash script.
+   ```bash
+   bash setup_software.sh
+   ```
+    
 
 You are now ready to start this workshop! 
 
