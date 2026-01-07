@@ -104,7 +104,7 @@ contig, size, location, basesPerLine, bytesPerLine.
 
 Creating the sequence dictionary file. We use CreateSequenceDictionary.jar from Picard tools to create a .dict file from a fasta file:
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar CreateSequenceDictionary -R reference/chrM.fa -O reference/chrM.dict
+java -jar software_update/gatk-package-4.6.2.0-local.jar CreateSequenceDictionary -R reference/chrM.fa -O reference/chrM.dict
 ```
 This produces a SAM-style header file; simply describing the contents of our fasta file.
 
@@ -199,7 +199,7 @@ The deduplication step locates and tags duplicate reads in a BAM or SAM file, wh
 defined as originating from a single fragment of DNA. Duplicates can arise during sample preparation e.g.
 library construction using PCR. Read more [here](https://gatk.broadinstitute.org/hc/en-us/articles/360036350292-MarkDuplicates-Picard-)
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar MarkDuplicates -I sample1_sorted.bam -O sample1_sorted_unique.bam \
+java -jar software_update/gatk-package-4.6.2.0-local.jar MarkDuplicates -I sample1_sorted.bam -O sample1_sorted_unique.bam \
 -M sample1_picard_metrics.txt
 ```
 
@@ -213,14 +213,14 @@ calls in each sequence read. BQSR comprises of two steps:
 read group, reported quality score, machine cycle, and nucleotide context. The file (table) created on this step
 will be used by the next step. Therefore, no changes will be made to our bam file on this step.
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar BaseRecalibrator -I sample1_sorted_unique.bam -R reference/chrM.fa \
+java -jar software_update/gatk-package-4.6.2.0-local.jar BaseRecalibrator -I sample1_sorted_unique.bam -R reference/chrM.fa \
 --known-sites software_update/common_all_chrM.vcf.gz -O recal_data_table.txt
 ```
 2. Apply Base-Recalibration. This is the main and final step of BQSR.  The tool recalibrates the 
 base qualities of the input reads based on the recalibration table produced on the previous step and outputs a 
 new recalibrated BAM file:
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar ApplyBQSR -I sample1_sorted_unique.bam -R reference/chrM.fa \
+java -jar software_update/gatk-package-4.6.2.0-local.jar ApplyBQSR -I sample1_sorted_unique.bam -R reference/chrM.fa \
 --bqsr-recal-file recal_data_table.txt -O sample1_sorted_unique_recalibrated.bam
 ```
 ---
@@ -235,7 +235,7 @@ This tool look through the alignments for regions with signs of variation (activ
 an active region, it discards the existing alignment and completely reassembles the reads
 in that region making the calling more accurate.
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar HaplotypeCaller -I sample1_sorted_unique_recalibrated.bam \
+java -jar software_update/gatk-package-4.6.2.0-local.jar HaplotypeCaller -I sample1_sorted_unique_recalibrated.bam \
 -R reference/chrM.fa -G StandardAnnotation \
 -bamout sample1_sorted_unique_recalibrated.bamout.bam \
 -O sample1.vcf
@@ -252,7 +252,7 @@ Here we hard-filter variants based on certain criteria. In this particular examp
 This tool will TAG and NOT REMOVE the variants that fail the Quality Control (fullfill at least one of
 the above criteria).
 ```bash
-java -jar software_update/gatk-package-4.0.4.0-local.jar VariantFiltration -V sample1.vcf -R reference/chrM.fa \
+java -jar software_update/gatk-package-4.6.2.0-local.jar VariantFiltration -V sample1.vcf -R reference/chrM.fa \
 --genotype-filter-expression "GQ < 30.0" --genotype-filter-name "LowGQ" \
 --filter-expression "QD < 1.5" --filter-name "LowQD" \
 --filter-expression "DP < 6" --filter-name "LowCoverage" \
