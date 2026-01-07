@@ -139,10 +139,8 @@ software_update/fastp -i sample1_r1.fastq -I sample1_r2.fastq -o sample1_out.R1.
 sample1_results.html --json sample1_results.json --report_title sample1_results
 ```
 
-To view the generated .HTML report navigate to the HTML file in File Explorer and then open with an internet browser
+To view the generated .HTML report navigate to the sample1_results.html file through your Windows environment and open the file with a browser (Google Chrome, Mozilla Firefox, etc...)
 
-
-If this command doesn't work, you can navigate to the sample1_results.html file through your Windows environment and open the file with a browser (Google Chrome, Mozilla Firefox, etc...)
 #### Alternative way of visualising the quality control of the reads with [FASTQC](http://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 An alternative way of visualising the quality of our sequence fastq data is with fastqc. This tool will not 
 perform any trimming or any other data processing. It will simply create a quality report in HTML format for the raw and the filtered reads.
