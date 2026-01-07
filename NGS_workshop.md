@@ -36,7 +36,7 @@ Instructions:
 	```bash
 	ls
 	```
-8. We will now create soft links to all the software packages required for this workshop using the setup_software.sh bash script.
+8. We will now create soft links to all the software packages required for this workshop using the setup_software.sh bash script. Running this script should create a new directory called software_update with the links to various software packages.
    ```bash
    bash setup_software.sh
    ```
