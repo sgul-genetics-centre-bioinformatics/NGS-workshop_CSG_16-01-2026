@@ -1,7 +1,7 @@
 ![alt text](https://ukeducationguide.com/wp-content/uploads/2014/10/stgeorgeslondon.jpg "St George's, University of London") 
 # CSG Workshop: Next Generation Sequencing data analysis
 Friday, January 16th, 2026  
-[St George's, University of London](https://www.sgul.ac.uk/)  
+[City St George's, University of London](https://www.sgul.ac.uk/)  
 
 
 ## Organisers: 
