@@ -346,9 +346,8 @@ For this part we are going to use the web version of IGV.
 
 
 # Quiz
-If you didn't have enough already, time to spend some time by playing around with this Quiz!
 
-Have fun and **Don't be shy**. It's normal to get stuck in many of these questions, so feel free to grab a demonstrator and seek advice! :)
+Please feel free to seek advice if you get stuck with any of these questions! :)
 
 ---
 1. In the VEP annotation results table, find the genomic coordinates of the missense variant with the highest Polyphen score.
