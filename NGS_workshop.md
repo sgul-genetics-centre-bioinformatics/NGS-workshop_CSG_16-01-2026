@@ -332,23 +332,17 @@ VEP also has a [command line stand alone version](http://www.ensembl.org/info/do
 
 This is the part of the pipeline that we will visualise the alignments generated in **Part 3** and the filtered variant calls generated in **Part 4**.
 
-For this part we are going to use the web version of the [IGV application]https://igv.org/app/
+For this part we are going to use the web version of IGV.
 
 1. Open a web browser and navigate to [online version of IGV](https://igv.org/app/)
 
-2. Open the IGV software (A window will normally open in your windows environment, please check the task bar).
-3. Go to `Genomes` and then select `Load genomes from file...`
-	* Locate the chrM.fa in your references directory and open.
-4. Go to `File` and then select `Load from file...`
-	* Locate the `sample1_sorted_unique_recalibrated.bam` and open.
-  
-You can also load a track showing the actual called variants:
-- Go to `File` and then select `Load from file...`
-- Locate the `sample1.filtered.vcf` and open.
-  
-  
-  
-There is also an [online version of IGV](https://igv.org/app/), which you can use without any installation.
+2. Go to 'Genome' and select 'Human (GRCh38/hg38)'
+3. Go to `Tracks` and then select `Local File`
+	* Locate the "sample1_sorted_unique_recalibrated.bam" "sample1_sorted_unique_recalibrated.bai" file in your project directory and open.
+4. You can also load a track showing the actual called variants:
+	* Go to `Tracks` and then select `Local File`
+	* Locate the `sample1.filtered.vcf` and open.
+5. In the bar at the top select a position to view (e.g. chrM:8860) to view the read alignments at this position.
 
 
 # Quiz
