@@ -46,7 +46,7 @@ You are now ready to start this workshop!
 
 ## Learning Objectives
 - Quick overview of next generation sequencing 
-- Linux command line
+- Gain experience using Linux command line
 - Next-generation sequencing software/tools 
 	- Genome reference download and index
 	- Raw sequencing reads pre-processing and quality control
