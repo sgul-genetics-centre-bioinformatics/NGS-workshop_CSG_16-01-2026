@@ -18,7 +18,7 @@ For this workshop we are going to use the command line enviroment within Rstudio
 When you are copying and pasting instructions onto the command line you should try and understand all elements of the instruction before executing!
 
 Instructions:
-1. Open File Explorer, navigate to https://stats4.sgul.ac.uk/rstudio/
+1. Open a web browser and navigate to https://stats4.sgul.ac.uk/rstudio/
 2. Click "New Project"
 3. Select "New Directory", "New Project" and call your directory "NGS_workshop" or something similar. This will create a new R project and directory on your H drive with this name.
 4. Navigate to the Terminal tab of the Console pane (on the left hand side of Rstudio). We will be working using this as a command line interface for running jobs on the stats4 server.
