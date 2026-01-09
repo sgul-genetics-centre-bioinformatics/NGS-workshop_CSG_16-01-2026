@@ -327,7 +327,7 @@ VEP also has a [command line stand alone version](http://www.ensembl.org/info/do
 3. **! Double check the human genome build you are using ! (Here, we are using hg38/GRCh38)**.
 
 4. Fill the job form using:
-	- Name for this job: `sgul_workshop_` followed by your initials (e.g. `sgul_workshop_DG`).
+	- Name for this job: `sgul_workshop_` followed by your initials (e.g. `sgul_workshop_SED`).
 	- Input data -> Or upload file: -> Choose file -> Navigate and select your `sample1.filtered.vcf` file.
 	- Transcript database to use: Ensembl/GENCODE transcripts.
 	- Make sure you will leave the Additional configurations field untouched using the pre-defined default fields.
