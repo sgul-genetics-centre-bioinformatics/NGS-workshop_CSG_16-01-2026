@@ -224,6 +224,15 @@ java -jar software_update/gatk-package-4.6.2.0-local.jar ApplyBQSR -I sample1_so
 --bqsr-recal-file recal_data_table.txt -O sample1_sorted_unique_recalibrated.bam
 ```
 ---
+
+### SAM/BAM Format
+BAM files can't be opened directly and need to be viewed via a tools e.g. looks, we can simply open the first 12 lines:
+```bash
+	software_update/samtools view sample1.bam
+```
+
+You can learn more about SAM/BAM format [here](https://github.com/samtools/hts-specs/blob/master/SAMv1.pdf)
+
 ### Part 4: Variant Calling: Identifying single nucleotide variants and small indels in our aligned mitochndrial data
 This is the part of the pipeline that we will use the alignment data to call variants, i.e., differences 
 between the aligned reads and the reference genome.
