@@ -232,6 +232,7 @@ BAM files can't be opened directly and need to be viewed via a tools e.g. looks,
 ```
 
 You can learn more details about the SAM/BAM format [here](https://github.com/samtools/hts-specs/blob/master/SAMv1.pdf)
+
 ---
 
 ### Part 4: Variant Calling: Identifying single nucleotide variants and small indels in our aligned mitochndrial data
