@@ -231,7 +231,8 @@ BAM files can't be opened directly and need to be viewed via a tools e.g. looks,
 	software_update/samtools view sample1.bam
 ```
 
-You can learn more about SAM/BAM format [here](https://github.com/samtools/hts-specs/blob/master/SAMv1.pdf)
+You can learn more details about the SAM/BAM format [here](https://github.com/samtools/hts-specs/blob/master/SAMv1.pdf)
+---
 
 ### Part 4: Variant Calling: Identifying single nucleotide variants and small indels in our aligned mitochndrial data
 This is the part of the pipeline that we will use the alignment data to call variants, i.e., differences 
